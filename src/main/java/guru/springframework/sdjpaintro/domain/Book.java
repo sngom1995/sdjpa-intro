@@ -1,9 +1,6 @@
 package guru.springframework.sdjpaintro.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
@@ -16,15 +13,27 @@ public class Book {
     private String isbn;
     private String publisher;
 
+    @Column(name = "author_id")
+    private Long authorId;
+
 
     public Book() {
     }
 
-    public Book(Long id, String title, String isbn, String publisher) {
+    public Book(Long id, String title, String isbn, String publisher, Long authorId) {
         this.id = id;
+        this.authorId = authorId;
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
+    }
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
     }
 
     public Long getId() {
