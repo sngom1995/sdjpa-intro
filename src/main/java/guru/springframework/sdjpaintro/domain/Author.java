@@ -2,7 +2,7 @@ package guru.springframework.sdjpaintro.domain;
 
 import jakarta.persistence.*;
 
-@Entity
+//@Entity
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,9 +17,9 @@ public class DataInitialization implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Book book1 = new Book(1L, "Spring Jpa","123121","SAMBA", null);
+        Book book1 = new Book(1L, "Spring Jpa","123121","SAMBA");
         bookRepository.save(book1);
-        Book book2 = new Book(2L, "Spring Framework","123517", "SAMBA",null);
+        Book book2 = new Book(2L, "Spring Framework","123517", "SAMBA");
         bookRepository.save(book2);
 
         bookRepository.findAll().forEach(book -> {
