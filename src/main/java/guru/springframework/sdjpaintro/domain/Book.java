@@ -16,17 +16,18 @@ public class Book {
     private String isbn;
     private String publisher;
 
-
+    private Long authorId;
 
 
     public Book() {
     }
 
-    public Book(Long id, String title, String isbn, String publisher) {
+    public Book(Long id, String title, String isbn, String publisher, Long authorId) {
         this.id = id;
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
+        this.authorId = authorId;
     }
 
     public Long getId() {
