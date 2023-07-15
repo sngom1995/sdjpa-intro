@@ -3,6 +3,7 @@ package guru.springframework.sdjpaintro.controller;
 import guru.springframework.sdjpaintro.repository.BookRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,8 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getAllBooks() {
+    public ResponseEntity<?> getAllBooks(@RequestHeader("Authorization") String authorizationHeader) {
+        System.out.println("Authorization header: " + authorizationHeader);
         return ResponseEntity.ok(bookRepository.findAll());
     }
 }
