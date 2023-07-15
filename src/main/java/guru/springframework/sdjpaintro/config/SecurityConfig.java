@@ -15,12 +15,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
         httpSecurity
-                .authorizeHttpRequests(authorizeHttpRequests ->
-                        authorizeHttpRequests
-                                .anyRequest().authenticated()
-                )
-                .httpBasic(Customizer.withDefaults())
-                .csrf().ignoringRequestMatchers("/api/**");
+                .authorizeHttpRequests()
+                .anyRequest().authenticated()
+                .and()
+                .oauth2ResourceServer().jwt();
         return httpSecurity.build();
     }
 }
